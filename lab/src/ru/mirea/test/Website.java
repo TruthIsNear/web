@@ -17,14 +17,14 @@ import java.util.List;
 @WebServlet(name = "Website", urlPatterns = {"/MainServlet/Website"})
 public class Website extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<String> lines = Files.readAllLines(Paths.get("D:\\web\\lab\\log.txt"),StandardCharsets.UTF_8);
+        List<String> lines = Files.readAllLines(Paths.get("C:\\JavaProjects\\web\\lab\\log.txt"),StandardCharsets.UTF_8);
         int role = Integer.parseInt(request.getParameter("Role"))-1;
         if (lines.size()-1>role*3){
             lines.remove(role*3);
             lines.remove(role*3);
             lines.remove(role*3);
         }
-        PrintWriter printWriter = new PrintWriter("D:\\web\\lab\\log.txt","UTF-8");
+        PrintWriter printWriter = new PrintWriter("C:\\JavaProjects\\web\\lab\\log.txt","UTF-8");
         for (String line : lines){
             printWriter.println(line);
         }

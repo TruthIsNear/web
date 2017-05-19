@@ -22,7 +22,7 @@ public class MainServlet extends HttpServlet {
                 "<a href = \"http://localhost:8080/MainServlet/SignIn\">Sign in</a></html>");
         PrintWriter printWriter = null;
         try {
-            printWriter = new PrintWriter(new OutputStreamWriter(new FileOutputStream("D:\\web\\lab\\log.txt",true), "UTF-8"));
+            printWriter = new PrintWriter(new OutputStreamWriter(new FileOutputStream("C:\\JavaProjects\\web\\lab\\log.txt",true), "UTF-8"));
         }
         catch (Exception e){
 
@@ -38,7 +38,5 @@ public class MainServlet extends HttpServlet {
         request.setAttribute("title", "Hello!");
         getServletConfig().getServletContext().getRequestDispatcher("/test.jsp").forward(request, response);
         request.getSession().setAttribute("Login", true);
-
-
     }
 }
